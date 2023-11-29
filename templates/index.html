@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blockchain Medico Vecnam</title>
+        <!-- fontawesome -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+    <body>
+        {% include componente %}
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-md-4">
+                    <a href="/login/1"
+                        class="btn btn-outline-light btn-lg btn-block link">
+                        <i class="fa-solid fa-user-doctor fa-2xl"></i>
+                        <br />
+                        <span>PERSONAL MÉDICO</span>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/login/2"
+                        class="btn btn-outline-light btn-lg btn-block link">
+                        <i class="fa-solid fa-wheelchair  fa-2xl"></i>
+                        <br />
+                        <span>PACIENTE</span>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/login/0"
+                        class="btn btn-outline-light btn-lg btn-block link">
+                        <i class="fa-solid fa-user fa-2xl"></i>
+                        <br />
+                        <span>ADMINISTRADOR</span>
+                    </a>
+                </div>
+                <div class="col-md-12 my-5">
+                    <h4 class="text-center">SELECCIONE EL TIPO DE USUARIO QUE
+                        DESEA INGRESAR </h4>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    {% include scripts%}
+</html>

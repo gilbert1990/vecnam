@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blockchain Medico Vecnam</title>
+        <!-- fontawesome -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <style>
+            .icon{
+                font-size: 15rem !important;
+                margin-bottom: 10rem !important
+            }
+            .recudro .icon{
+                margin-top: auto;
+            }
+            h4{
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+</head>
+
+<body>
+    {% include componente %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 recudro">
+                <div>
+                    <i class="fa-solid fa-magnifying-glass fa-2xl icon"></i>
+                    <h3>CREAR Y CONSULTAR USUARIOS</h3>
+                </div>
+            </div>
+            <div class="col-md-6 my-auto">
+                <form method="POST"
+                    action="/register_user/0">
+                    <div class="col-md-12 text-center" style="
+                    margin-bottom: 3rem;
+                ">
+                        <h4>CREAR USUARIOS</h4>
+                    </div>
+                    {% if alert %}
+                    {% include alerts%}
+                    {%endif%}
+                    <div class="row g-2">
+                        <div class="col-md-12 mx-auto ">
+                            <input type="text" class="form-control w-70"
+                                placeholder="NOMBRE COMPLETO" id="name"
+                                name="name">
+                        </div>
+                        <div class="col-md-12 mx-auto ">
+                            <input type="email" class="form-control w-70"
+                                placeholder="CORREO ELECTRÓNICO" id="email"
+                                name="email">
+                        </div>
+                        <div class="col-md-12 mx-auto ">
+                            <input type="date" class="form-control"
+                                placeholder="FECHA DE NACIMIENTO" id="birthdate"
+                                name="birthdate">
+                        </div>
+                        <div class="col-md-12 mx-auto ">
+                            <input type="number" class="form-control"
+                                placeholder="NÚMERO DE IDENTIFICACIÓN" id="document"
+                                name="document">
+                        </div>
+                        <div class="col-md-12 mx-auto ">
+                            <input type="date" class="form-control"
+                                placeholder="FECHA DE EXPEDICIÓN DEL DOCUMENTO DE IDENTIFICACIÓN" id="date_document"
+                                name="date_document">
+                        </div>
+                        <div class="col-md-12 mx-auto ">
+                            <input type="password" class="form-control"
+                                placeholder="CONTRASEÑA"
+                                name="password"
+                                id="inputPassword">
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <button
+                                class="btn btn-outline-light btn-lg btn-block button"
+                                type="submit">
+                                REGISTRARSE
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-2 my-auto">
+                <label>LISTA DE USUARIOS</label>
+                <select class="form-control" id="user_select"
+                    onchange="traerInfo()">
+                    <option>Seleccionar</option>
+                    {% for user in users %}
+                    <option value="{{  loop.index }}">{{ user[0] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+    </div>
+</body>
+{% include scripts%}
+<script>
+    function traerInfo(){
+
+        var user_select=document.getElementById("user_select")
+        var usersData="{{users}}"
+        
+        // Divide la cadena en elementos individuales separados por comas
+        var userDataArray = usersData.split(', ');
+        document.getElementById("name").value=userDataArray[0];
+        document.getElementById("email").value=userDataArray[4];
+        document.getElementById("birthdate").value=userDataArray[1];
+        document.getElementById("document").value=userDataArray[2];
+        document.getElementById("date_document").value=userDataArray[3];
+    }
+       </script> 
+</html>

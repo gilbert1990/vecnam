@@ -1,0 +1,11 @@
+
+{% if alert['code']==400 %}
+<div class="alert alert-danger">
+    {{ alert['message'] }}
+</div>
+{% endif %}
+{% if alert['code']==200 %}
+<div class="alert alert-success">
+    {{ alert['message'] }}
+</div>
+{% endif %}

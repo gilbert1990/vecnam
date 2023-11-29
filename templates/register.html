@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blockchain Medico Vecnam</title>
+        <!-- fontawesome -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <style>
+            .icon-register{
+                font-size: 15rem !important;
+                margin-bottom: 6rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        {% include componente %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 recudro">
+                    <div>
+                        <h3>REGISTRO DE USUARIOS</h3>
+                        <i class="fa-solid fa-user-group fa-2xl icon"></i>
+                    </div>
+                </div>
+                <div class="col-md-6 my-auto">
+                    <form method="POST"
+                        action="/register_user/{{rol}}">
+                        <div class="col-md-12 text-center" style="
+                        margin-bottom: 3rem;
+                    ">
+                            <i class="fa-regular fa-user fa-2xl icon-register"></i>
+                        </div>
+                        {% if alerts %}
+                        {% include alerts%}
+                        {%endif%}
+                        <div class="row g-2">
+                            <div class="col-md-12 mx-auto ">
+                                <input type="text" class="form-control w-70"
+                                    placeholder="NOMBRE COMPLETO"
+                                    name="name">
+                            </div>
+                            <div class="col-md-12 mx-auto ">
+                                <input type="email" class="form-control w-70"
+                                    placeholder="CORREO ELECTRÓNICO"
+                                    name="email">
+                            </div>
+                            <div class="col-md-12 mx-auto ">
+                                <input type="date" class="form-control"
+                                    placeholder="FECHA DE NACIMIENTO"
+                                    name="birthdate">
+                            </div>
+                            <div class="col-md-12 mx-auto ">
+                                <input type="number" class="form-control"
+                                    placeholder="NÚMERO DE IDENTIFICACIÓN"
+                                    name="document">
+                            </div>
+                            <div class="col-md-12 mx-auto ">
+                                <input type="date" class="form-control"
+                                    placeholder="FECHA DE EXPEDICIÓN DEL DOCUMENTO DE IDENTIFICACIÓN"
+                                    name="date_document">
+                            </div>
+                            <div class="col-md-12 mx-auto ">
+                                <input type="password" class="form-control"
+                                    placeholder="CONTRASEÑA"
+                                    name="password"
+                                    id="inputPassword">
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <button
+                                    class="btn btn-outline-light btn-lg btn-block button"
+                                    type="submit">
+                                    REGISTRARSE
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    {% include scripts%}
+
+</html>

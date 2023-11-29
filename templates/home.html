@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blockchain Medico Vecnam</title>
+        <!-- fontawesome -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+    <body>
+        {% include componente %}
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-md-4">
+                    <a href="/new_user"
+                        class="btn btn-outline-light btn-lg btn-block link">
+                        <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
+                        <br />
+                        <span> CREAR Y CONSULTAR USUARIOS</span>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/permission"
+                        class="btn btn-outline-light btn-lg btn-block link">
+                        <i class="fa-solid fa-user-lock  fa-2xl"></i>
+                        <br />
+                        <span>MODIFICAR PERMISOS</span>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/info"
+                        class="btn btn-outline-light btn-lg btn-block link">
+                        <i class="fa-solid fa-pen-to-square fa-2xl"></i>
+                        <br />
+                        <span>EDITAR INFORMACIÓN</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    {% include scripts%}
+</html>

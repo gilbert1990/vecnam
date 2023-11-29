@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blockchain Medico Vecnam</title>
+        <!-- fontawesome -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <style>
+            .icon{
+                font-size: 15rem !important;
+                margin-bottom: 10rem !important
+            }
+            .recudro .icon{
+                margin-top: auto;
+            }
+        </style>
+    </head>
+</head>
+
+<body>
+    {% include componente %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 recudro">
+                <div>
+                    <i class="fa-solid fa-magnifying-glass fa-2xl icon"></i>
+                    <h3>MODIFICAR PERMISOS</h3>
+                </div>
+            </div>
+            <div class="col-md-6 my-auto">
+                <form class="row">
+                    <div class="col-md-6">
+                        <label>Usuario</label>
+                        <select class="form-control" id="user_select" onchange="cambiarRol()">
+                            {% for user in users %}
+                            <option value="{{user[5]}}">{{user[0]}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Rol</label>
+                        <select class="form-control" id="permission" >
+                            <option value="0">Administrador</option>
+                            <option value="1">Medico</option>
+                            <option value="2">Paciente</option>
+                        </select>
+                    </div>
+                    <div class="my-2 col-md-12 mx-auto">
+                        <a type="submit" href="/home"
+                            class="btn btn-primary">Modificar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+{% include scripts%}
+<script>
+    function cambiarRol(){
+        var user_select=document.getElementById("user_select").value
+        document.getElementById("permission").value=user_select
+    }
+
+   </script> 
+
+</html>

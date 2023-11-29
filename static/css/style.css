@@ -1,0 +1,48 @@
+
+body {
+    background-color: #e8e8e8;
+    font-size: 1.25rem;
+}
+.link {
+    font-size: 3.25rem !important;
+    padding: 50px;
+    border: none;
+    color: black;
+}
+.link>span {
+    font-size: 1.5rem;
+}
+h1{
+    font-size: 45px !important;
+}
+h4{
+    background-color: white;
+    border:  solid rgb(167 149 149) 1px;
+    border-radius: 2px;
+    padding: 10px 0;
+}
+.button{
+    background-color: white;
+    color: black;
+    border:  solid rgb(167 149 149) 1px;
+    border-radius: 2px;
+    padding: 10px 60px;
+}
+.link-login{
+    margin-left: 4rem!important;
+    color: black;
+    text-decoration: none;
+}
+.recudro .icon{
+    font-size: 15rem !important;
+    margin-top: 10rem;
+}
+.recudro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    height: 50rem;
+    background-color: white;
+    color: black;
+}
